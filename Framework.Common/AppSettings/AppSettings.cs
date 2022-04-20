@@ -7,6 +7,11 @@
         {
             Configuration = configuration;
         }
+        /// <summary>
+        /// 读取配置文件
+        /// </summary>
+        /// <param name="sections"></param>
+        /// <returns></returns>
         public static string app(params string[] sections)
         {
             try
@@ -20,6 +25,17 @@
             catch (Exception) { }
 
             return "";
+        }
+
+        /// <summary>
+        /// JwtSettings
+        /// </summary>
+        public static JwtSettings JwtSettings
+        {
+            get
+            {
+                return new JwtSettings();
+            }
         }
     }
 }

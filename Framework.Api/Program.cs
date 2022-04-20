@@ -28,7 +28,7 @@ builder.Services.AddCustomSwagger();
 builder.Services.AddQuartz();
 //注册http相关服务
 builder.Services.AddCustomHttpContext();
-//鉴权
+//授权
 builder.Services.AddAuthorization();
 //控制器
 builder.Services.AddControllers();
