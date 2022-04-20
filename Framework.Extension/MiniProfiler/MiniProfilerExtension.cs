@@ -1,6 +1,6 @@
 ﻿namespace Framework.Extensions
 {
-    public static class MiniProfilerConfig
+    public static class MiniProfilerExtension
     {
         public static void AddCustomProfiler(this IServiceCollection services)
         {

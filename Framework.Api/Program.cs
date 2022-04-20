@@ -24,12 +24,14 @@ builder.Services.AddCustomCors();
 builder.Services.AddCustomProfiler();
 //注册接口文档Sagger
 builder.Services.AddCustomSwagger();
-//注册quartz任务调度器
+//注册quartz任务调度器(待完善)
 builder.Services.AddQuartz();
 //注册http相关服务
 builder.Services.AddCustomHttpContext();
 //授权
-builder.Services.AddAuthorization();
+builder.Services.AddCustomAuthorization();
+//鉴权
+builder.Services.AddJwtAuthentication();
 //控制器
 builder.Services.AddControllers();
 

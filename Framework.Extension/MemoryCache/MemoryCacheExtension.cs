@@ -1,8 +1,6 @@
-﻿
-
-namespace Framework.Extensions
+﻿namespace Framework.Extensions
 {
-    public static class MemoryCacheConfig
+    public static class MemoryCacheExtension
     {
         public static void AddCustomMemoryCache(this IServiceCollection services)
         {

@@ -3,7 +3,7 @@
     /// <summary>
     /// 配置跨服服务
     /// </summary>
-    public static class CorsConfig
+    public static class CorsExtension
     {
         public static void AddCustomCors(this IServiceCollection services)
         {

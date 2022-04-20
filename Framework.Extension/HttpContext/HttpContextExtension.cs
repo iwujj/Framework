@@ -1,6 +1,6 @@
 ﻿namespace Framework.Extensions
 {
-    public static class HttpContextConfig
+    public static class HttpContextExtension
     {
         public static void AddCustomHttpContext(this IServiceCollection services)
         {

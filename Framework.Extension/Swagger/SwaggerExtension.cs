@@ -1,7 +1,7 @@
 ﻿
 namespace Framework.Extensions
 {
-    public static class SwaggerConfig
+    public static class SwaggerExtension
     {
         public static void AddCustomSwagger(this IServiceCollection services)
         {
