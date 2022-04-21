@@ -1,3 +1,4 @@
+using Framework.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Framework.Api.Controllers
@@ -12,22 +13,19 @@ namespace Framework.Api.Controllers
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IUserService _userService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IUserService userService)
         {
             _logger = logger;
+            _userService= userService;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public async  Task<string> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            await _userService.AddUser();
+            return "Done";
         }
     }
 }

@@ -31,7 +31,7 @@
             return "";
         }
 
-        public int ID => GetClaimValueByType("jti").FirstOrDefault().ObjToInt();
+        public Guid ID => Guid.Parse(GetClaimValueByType("jti").FirstOrDefault());
 
         public bool IsAuthenticated()
         {

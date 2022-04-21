@@ -9,7 +9,7 @@ namespace Framework.Common
     public interface IUser
     {
         string Name { get; }
-        int ID { get; }
+        Guid ID { get; }
         bool IsAuthenticated();
         IEnumerable<Claim> GetClaimsIdentity();
         List<string> GetClaimValueByType(string ClaimType);

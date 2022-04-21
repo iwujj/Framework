@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Api", "Framework.Api\Framework.Api.csproj", "{1D4AE76B-C713-48CD-8FE0-7D8BE6B79D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Api", "Framework.Api\Framework.Api.csproj", "{1D4AE76B-C713-48CD-8FE0-7D8BE6B79D48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Extensions", "Framework.Extension\Framework.Extensions.csproj", "{18456094-BE6E-4BAF-A88E-966EC049FB34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Extensions", "Framework.Extension\Framework.Extensions.csproj", "{18456094-BE6E-4BAF-A88E-966EC049FB34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Services", "Framework.IServices\Framework.Services.csproj", "{7351C4D0-0AEE-4DC3-AB14-2D6046F5D2CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Repository", "Framework.Repository\Framework.Repository.csproj", "{1A829F49-2ABC-4415-87FF-2AE0378D3809}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Repository", "Framework.Repository\Framework.Repository.csproj", "{1A829F49-2ABC-4415-87FF-2AE0378D3809}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Common", "Framework.Common\Framework.Common.csproj", "{1AAFA227-AA2E-416D-AC6E-D33A323CE9DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Common", "Framework.Common\Framework.Common.csproj", "{1AAFA227-AA2E-416D-AC6E-D33A323CE9DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Test", "Framework.Test\Framework.Test.csproj", "{90268F78-24B3-45BD-9646-99E67F2FD2DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Test", "Framework.Test\Framework.Test.csproj", "{90268F78-24B3-45BD-9646-99E67F2FD2DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Services", "Framework.Services\Framework.Services.csproj", "{77436AD4-8A7D-48CF-8F0D-5706087173B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Model", "Framework.Model\Framework.Model.csproj", "{7EA4CAF6-AA26-4908-8F60-AF52A516CC06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +31,6 @@ Global
 		{18456094-BE6E-4BAF-A88E-966EC049FB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18456094-BE6E-4BAF-A88E-966EC049FB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18456094-BE6E-4BAF-A88E-966EC049FB34}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7351C4D0-0AEE-4DC3-AB14-2D6046F5D2CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7351C4D0-0AEE-4DC3-AB14-2D6046F5D2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7351C4D0-0AEE-4DC3-AB14-2D6046F5D2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7351C4D0-0AEE-4DC3-AB14-2D6046F5D2CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A829F49-2ABC-4415-87FF-2AE0378D3809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1A829F49-2ABC-4415-87FF-2AE0378D3809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A829F49-2ABC-4415-87FF-2AE0378D3809}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +43,14 @@ Global
 		{90268F78-24B3-45BD-9646-99E67F2FD2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90268F78-24B3-45BD-9646-99E67F2FD2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90268F78-24B3-45BD-9646-99E67F2FD2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77436AD4-8A7D-48CF-8F0D-5706087173B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77436AD4-8A7D-48CF-8F0D-5706087173B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77436AD4-8A7D-48CF-8F0D-5706087173B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77436AD4-8A7D-48CF-8F0D-5706087173B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EA4CAF6-AA26-4908-8F60-AF52A516CC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA4CAF6-AA26-4908-8F60-AF52A516CC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA4CAF6-AA26-4908-8F60-AF52A516CC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA4CAF6-AA26-4908-8F60-AF52A516CC06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

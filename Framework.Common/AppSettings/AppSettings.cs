@@ -1,6 +1,6 @@
 ﻿namespace Framework.Common
 {
-    public  class AppSettings
+    public class AppSettings
     {
         public static IConfiguration Configuration { get; set; }
         public AppSettings(IConfiguration configuration)
@@ -26,6 +26,7 @@
 
             return "";
         }
+        public static string ConnectionString => Configuration.GetConnectionString("Default");
 
         /// <summary>
         /// JwtSettings

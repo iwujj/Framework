@@ -1,11 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Extensions.Authentication
+﻿namespace Framework.Extensions
 {
     public static class AuthenticationExtension
     {
@@ -65,14 +58,11 @@ namespace Framework.Extensions.Authentication
                              {
                                  context.Response.Headers.Add("Token-Error-Iss", "issuer is wrong!");
                              }
-
                              if (jwtToken.Audiences.FirstOrDefault() != Audience)
                              {
                                  context.Response.Headers.Add("Token-Error-Aud", "Audience is wrong!");
                              }
                          }
-
-
                          // 如果过期，则把<是否过期>添加到，返回头信息中
                          if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
                          {

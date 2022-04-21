@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCoreRateLimit" Version="4.0.2" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+    <PackageReference Include="log4net" Version="2.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.1" />
     <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
@@ -17,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Framework.Common\Framework.Common.csproj" />
+    <ProjectReference Include="..\Framework.Model\Framework.Model.csproj" />
+    <ProjectReference Include="..\Framework.Repository\Framework.Repository.csproj" />
   </ItemGroup>
 
 </Project>

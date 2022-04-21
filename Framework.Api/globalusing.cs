@@ -1,5 +1,14 @@
-﻿global using Autofac.Extensions.DependencyInjection;
-global using Autofac;
-global using Framework.Extension;
+﻿global using Autofac;
+global using Autofac.Extensions.DependencyInjection;
 global using Framework.Common;
+global using Framework.Extension;
 global using Framework.Extensions;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Controllers;
+global using Microsoft.AspNetCore.Server.Kestrel.Core;
+global using Microsoft.Extensions.DependencyInjection.Extensions;
+global using Newtonsoft.Json;
+global using Newtonsoft.Json.Converters;
+global using Newtonsoft.Json.Serialization;
+global using System.Text;
+global using Framework.Repository;
