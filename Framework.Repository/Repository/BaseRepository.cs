@@ -1,13 +1,13 @@
-﻿
-
-namespace Framework.Repository
+﻿namespace Framework.Repository
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseModel
     {
-        readonly FrameworkContext _dbContext;
-        public BaseRepository(FrameworkContext frameworkContext)
+        readonly DbContext _dbContext;
+        readonly IBaseDbContextProvider<FrameworkContext> _deContextProvider;
+        public BaseRepository(IBaseDbContextProvider<FrameworkContext> dbContextProvider)
         {
-            _dbContext=frameworkContext;
+            _deContextProvider = dbContextProvider;
+            _dbContext=dbContextProvider.GetDbContext();
         }
         public async Task<TEntity> Add(TEntity entity)
         {

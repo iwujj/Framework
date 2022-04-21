@@ -1,7 +1,8 @@
-﻿namespace Framework.Repository.DBContext
+﻿
+namespace Framework.Repository
 {
-    public partial class FrameworkContext :DbContext
+    public partial class FrameworkContext:DbContext
     {
-     
+        public DbSet<User> Users { get; set; }
     }
 }

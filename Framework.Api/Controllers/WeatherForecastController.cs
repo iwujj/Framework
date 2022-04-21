@@ -25,6 +25,7 @@ namespace Framework.Api.Controllers
         public async  Task<string> Get()
         {
             await _userService.AddUser();
+            await _userService.RemoveUser(x => x.Name == "уехЩ");
             return "Done";
         }
     }

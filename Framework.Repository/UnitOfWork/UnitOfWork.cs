@@ -2,14 +2,16 @@
 
 namespace Framework.Repository.UnitOfWork
 {
-    public class UnitOfWork : IUintOfWork
+    public class UnitOfWork : IUnitOfWork
     {
-       
-        FrameworkContext _dbContext { get; set; }
+
+        IBaseDbContextProvider<FrameworkContext> _dbContextProvider { get; set; }
+        DbContext _dbContext { get; set; }
         IUser _user { get; set; }
-        public UnitOfWork(IUser user, FrameworkContext dbContext)
+        public UnitOfWork(IUser user, IBaseDbContextProvider<FrameworkContext> dbContextProvider)
         {
-            _dbContext = dbContext;
+            _dbContextProvider = dbContextProvider;
+            _dbContext=dbContextProvider.GetDbContext();
             _user = user;
         }
         public IDbContextTransaction CurrentTransaction { get { return _dbContext.Database.CurrentTransaction; } }
@@ -52,7 +54,7 @@ namespace Framework.Repository.UnitOfWork
             }
         }
 
-        public async  Task SaveChangesAsync()
+        public async Task SaveChangesAsync()
         {
             // 共通字段            
             _dbContext.ChangeTracker.DetectChanges();

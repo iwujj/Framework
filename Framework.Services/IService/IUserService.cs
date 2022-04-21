@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Services
+﻿namespace Framework.Services
 {
     public interface IUserService
     {
         Task AddUser();
+        Task RemoveUser(Expression<Func<User, bool>> predicate);
     }
 }

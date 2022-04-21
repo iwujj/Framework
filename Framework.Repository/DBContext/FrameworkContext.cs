@@ -4,9 +4,10 @@
     {
         public FrameworkContext(DbContextOptions options) : base(options)
         {
-            
+            Console.WriteLine(typeof(FrameworkContext).FullName);
         }
-       
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.ConnectionString);
@@ -17,6 +18,7 @@
         {
             base.OnModelCreating(modelBuilder);
         }
-        public DbSet<User> Users { get; set; }
+
+     
     }
 }

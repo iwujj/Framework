@@ -20,8 +20,15 @@ namespace Framework.Extension
                 log.Error(msg);
                 throw new Exception(msg);
             }
+            if (typeof(DataBaseApi).IsAssignableFrom(typeof(IDataBaseApi)))
+            {
+
+            }
             //泛型注册
-            builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>)).InstancePerDependency();//注册仓储
+            builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>)).InstancePerDependency();
+            builder.RegisterGeneric(typeof(BaseDbContextProvider<>)).As(typeof(IBaseDbContextProvider<>)).InstancePerDependency();
+            builder.RegisterGeneric(typeof(CustomServiceProvider<>)).As(typeof(ICustomServiceProvider<>)).InstancePerDependency();
+
 
             // 获取 Service.dll 程序集服务，并注册
             var assemblysServices = Assembly.LoadFrom(servicesDllFile);
