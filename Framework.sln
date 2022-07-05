@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Test", "Framework
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Services", "Framework.Services\Framework.Services.csproj", "{77436AD4-8A7D-48CF-8F0D-5706087173B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Model", "Framework.Model\Framework.Model.csproj", "{7EA4CAF6-AA26-4908-8F60-AF52A516CC06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Model", "Framework.Model\Framework.Model.csproj", "{7EA4CAF6-AA26-4908-8F60-AF52A516CC06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

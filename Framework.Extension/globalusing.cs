@@ -1,7 +1,7 @@
 ﻿global using AspNetCoreRateLimit;
 global using Autofac;
 global using Framework.Common;
-global using Framework.Model;
+global using Framework.Model.Response;
 global using Microsoft.AspNetCore.Authentication;
 global using Microsoft.AspNetCore.Authentication.JwtBearer;
 global using Microsoft.AspNetCore.Authorization;
@@ -30,3 +30,4 @@ global using Microsoft.AspNetCore.Builder;
 global using System.Net;
 global using Framework.Repository;
 global using System.Reflection;
+global using Autofac.Extensions.DependencyInjection;

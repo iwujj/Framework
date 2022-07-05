@@ -5,12 +5,11 @@ using System.Diagnostics.CodeAnalysis;
 namespace Framework.Model.Entities
 {
     [Table("Sys_User")]
-    public class User : CommonField, IDeleteField, IEnabledField
+    public class User : BaseModel
     {
         /// <summary>
         /// 编号
         /// </summary>
-
         public string? Code { get; set; }
         /// <summary>
         /// 名字
@@ -32,14 +31,6 @@ namespace Framework.Model.Entities
         /// </summary>
 
         public string Password { get; set; }
-        /// <summary>
-        /// 是否删除
-        /// </summary>
-
-        public bool IsDelete { get; set; }
-        /// <summary>
-        /// 是否禁用
-        /// </summary>
-        public bool IsEnabled { get; set; }
+       
     }
 }

@@ -12,14 +12,25 @@
         public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             if (bindingContext == null) throw new ArgumentNullException("bindingContext");
+            ValueProviderResult result = bindingContext.ValueProvider.GetValue(bindingContext.ModelName);
             try
             {
+                JObject obj = new JObject();
                 if (bindingContext.ModelType == typeof(JObject))
                 {
-                    string Content = new StreamReader(bindingContext.HttpContext.Request.Body).ReadToEndAsync().Result;
-                    JObject obj = JsonConvert.DeserializeObject<JObject>(Content);
+                    foreach (var item in bindingContext.ActionContext.HttpContext.Request.Form)
+                    {
+                        obj.Add(new JProperty(item.Key.ToString(), item.Value.ToString()));
+                    }
+                    if ((obj.Count == 0))
+                    {
+                        bindingContext.ModelState.TryAddModelError(bindingContext.ModelName, bindingContext.ModelMetadata.ModelBindingMessageProvider.ValueMustNotBeNullAccessor(result.ToString()));
+                        return Task.CompletedTask;
+                    }
                     bindingContext.Result = (ModelBindingResult.Success(obj));
+                    return Task.CompletedTask;
                 }
+                return Task.CompletedTask;
             }
             catch (Exception exception)
             {
@@ -28,8 +39,8 @@
                     exception = ExceptionDispatchInfo.Capture(exception.InnerException).SourceException;
                 }
                 bindingContext.ModelState.TryAddModelError(bindingContext.ModelName, exception, bindingContext.ModelMetadata);
+                return Task.CompletedTask;
             }
-            return Task.CompletedTask;
         }
     }
 }

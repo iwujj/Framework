@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Framework.Model\Framework.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Provider\" />
-  </ItemGroup>
-
 </Project>

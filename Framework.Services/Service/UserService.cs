@@ -19,7 +19,7 @@
             user.Age = 18;
             user.Account = "admin";
             user.IsEnabled = true;
-            user.IsDelete = false;
+            user.IsDeleted = false;
             user.Code = "test001";
             await _userRespository.Add(user);
             await _unitOfWork.SaveChangesAsync();
@@ -29,6 +29,12 @@
              _userRespository.Delete(predicate);
               //await Task.CompletedTask;
             await _unitOfWork.SaveChangesAsync();
+        }
+
+
+        public async Task<User> GetUser(Expression<Func<User, bool>> predicate)
+        {
+           return await _userRespository.GetEntity(predicate);
         }
     }
 }

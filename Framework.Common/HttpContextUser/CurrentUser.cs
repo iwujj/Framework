@@ -1,6 +1,6 @@
 ﻿namespace Framework.Common
 {
-    public class CurrentUser:IUser
+    public class CurrentUser:IDentity
     {
         private readonly IHttpContextAccessor _accessor;
         private readonly ILogger<CurrentUser> _logger;

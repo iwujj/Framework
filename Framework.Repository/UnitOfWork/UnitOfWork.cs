@@ -5,16 +5,14 @@ namespace Framework.Repository.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
 
-        IBaseDbContextProvider<FrameworkContext> _dbContextProvider { get; set; }
-        DbContext _dbContext { get; set; }
-        IUser _user { get; set; }
-        public UnitOfWork(IUser user, IBaseDbContextProvider<FrameworkContext> dbContextProvider)
+        FrameworkDBContextFactory<FrameworkContext> _contextFactory;
+        FrameworkContext _dbContext { get { return _contextFactory.Current; } }
+        public UnitOfWork(FrameworkDBContextFactory<FrameworkContext> contextFactory)
         {
-            _dbContextProvider = dbContextProvider;
-            _dbContext=dbContextProvider.GetDbContext();
-            _user = user;
+
+            _contextFactory = contextFactory;
         }
-        public IDbContextTransaction CurrentTransaction { get { return _dbContext.Database.CurrentTransaction; } }
+        public IDbContextTransaction CurrentTransaction { get {  _contextFactory.SetReadWrite(ReadWriteType.ForceWrite); return _dbContext.Database.CurrentTransaction; } }
 
         public void BeginTransaction()
         {

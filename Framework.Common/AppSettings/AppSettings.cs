@@ -26,7 +26,8 @@
 
             return "";
         }
-        public static string ConnectionString => Configuration.GetConnectionString("Default");
+        public static string ReadConnectionString => Configuration.GetConnectionString("Read");
+        public static string WriteConnectionString => Configuration.GetConnectionString("Write");
 
         /// <summary>
         /// JwtSettings
